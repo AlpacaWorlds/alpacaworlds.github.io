@@ -5,7 +5,14 @@ body{
 	color: #333;
 }
 h1{
-	font-size: 4em;
+	font-size: 3em;
+	width: 80%;
+	margin: 0 auto 1em;
+}
+h2 {
+	font-size: 2em;
+	width: 80%;
+	margin: 1em auto;
 }
 p{
 	font-size: 1.5em;
@@ -15,12 +22,11 @@ p{
 	text-align:center;
 }
 .intro p{
-	width: 50%;
+	width: 80%;
 	margin: 0 auto 1em;
-	font-size: 1.5em;
 	text-align: left;
 }
-.full p {
+.intro.full p {
 	font-size: 1em;
 }
 .section h1 {
@@ -71,3 +77,8 @@ p{
 	padding: 0;
 	margin:0;
 }
+@media screen and (max-width: 800px) {
+	h1 {
+	  font-size: 2em;
+	}
+  }
