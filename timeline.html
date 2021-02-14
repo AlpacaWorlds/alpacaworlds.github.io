@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+  <link rel="stylesheet" href="css/timeline.css">
+</head>
+
+<body>
+  <header>
+    <img class="pic" src="images/alpacaLogo.png">
+    <p></p>
+  </header>
+  <div id="timeline">
+    <div class="timeline">
+      <div v-for="(card, index) in cards" :class="rightOrLeft(index)" class="container">
+        <div class="content">
+          <h2>{{ card.immutable_data.name }}</h2>
+          <h5>{{ card.created_at_time | formatDate }}</h5>
+          <div class="card">
+            <img :src="'https://imagex.aratech.co/?url=wax.atomichub.io/ipfs/' + card.immutable_data.img + '&w=300'"
+              :alt="card.immutable_data.name + ' front'" />
+            <img v-if="card.immutable_data.backimg" :src="'https://imagex.aratech.co/?url=wax.atomichub.io/ipfs/' + card.immutable_data.backimg + '&w=300'"
+              :alt="card.immutable_data.name + ' back'" />
+              <img v-if="!card.immutable_data.backimg" src="images/blank.jpg"/>
+          </div>
+          <p>{{ card.immutable_data.description }}</p>
+          <h5>
+            <a :href="'https://wax.atomichub.io/explorer/template/alpacaworlds/'+card.template_id" target="_blank">See
+              it on AtomicAssets</a>
+          </h5>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var timeline = new Vue({
+        el: "#timeline",
+
+        data: {
+          cards: null,
+        },
+
+        created: function () {
+          this.fetchData();
+        },
+
+        filters: {
+          formatDate: function (date) {
+            return moment.unix(date / 1000).format('DD/MM/YYYY');
+          }
+        },
+
+        methods: {
+          fetchData: function () {
+            var apiURL = "https://wax.api.atomicassets.io/atomicassets/v1/templates?collection_name=alpacaworlds&page=1&limit=100&order=asc&sort=created";
+            var xhr = new XMLHttpRequest();
+            var self = this;
+            xhr.open("GET", apiURL);
+            xhr.onload = function () {
+              self.cards = JSON.parse(xhr.responseText).data;
+            };
+            xhr.send();
+          },
+          rightOrLeft(index) {
+            return index % 2 === 0 ? 'left' : 'right';
+          },
+        }
+      });
+    </script>
+</body>
+
+</html>
