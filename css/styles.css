@@ -1,10 +1,10 @@
 /* Custom CSS
  * --------------------------------------- */
-body{
-	font-family: arial,helvetica;
+body {
+	font-family: arial, helvetica;
 	color: #333;
 }
-h1{
+h1 {
 	font-size: 3em;
 	width: 80%;
 	margin: 0 auto 1em;
@@ -14,14 +14,37 @@ h2 {
 	width: 80%;
 	margin: 1em auto;
 }
-p{
+p {
 	font-size: 1.5em;
 	text-align: left;
 }
-.section{
-	text-align:center;
+.section {
+	text-align: center;
 }
-.intro p{
+
+nav {
+	position: absolute;
+	top: 30px;
+	right: 100px;
+	clear: both;
+}
+nav a {
+	color: #ffffff;
+	font-size: 20px;
+	text-decoration: none;
+	background-color: #69AF54;
+	padding: 10px 30px;
+	border-radius: 8px;
+}
+nav a:hover {
+	background-color: #333333;
+}
+
+.logo {
+	clear: both;
+}
+
+.intro p {
 	width: 80%;
 	margin: 0 auto 1em;
 	text-align: left;
@@ -32,53 +55,69 @@ p{
 .section h1 {
 	margin-bottom: 1em;
 }
-.intro p a{
+.intro p a {
 	color: #ffffff;
 }
 #menu li {
-	display:inline-block;
+	display: inline-block;
 	margin: 10px;
 	color: #000;
-	background:#fff;
-	background: rgba(255,255,255, 0.5);
+	background: #fff;
+	background: rgba(255, 255, 255, 0.5);
 	-webkit-border-radius: 10px;
-            border-radius: 10px;
+	border-radius: 10px;
 }
-#menu li.active{
-	background:#666;
-	background: rgba(0,0,0, 0.5);
+#menu li.active {
+	background: #666;
+	background: rgba(0, 0, 0, 0.5);
 	color: #fff;
 }
-#menu li a{
-	text-decoration:none;
+#menu li a {
+	text-decoration: none;
 	color: #000;
 }
-#menu li.active a:hover{
+#menu li.active a:hover {
 	color: #000;
 }
-#menu li:hover{
-	background: rgba(255,255,255, 0.8);
+#menu li:hover {
+	background: rgba(255, 255, 255, 0.8);
 }
 #menu li a,
-#menu li.active a{
+#menu li.active a {
 	padding: 9px 18px;
-	display:block;
+	display: block;
 }
-#menu li.active a{
+#menu li.active a {
 	color: #fff;
 }
-#menu{
-	position:fixed;
-	top:0;
-	left:0;
+#menu {
+	position: fixed;
+	top: 0;
+	left: 0;
 	height: 40px;
 	z-index: 70;
 	width: 100%;
 	padding: 0;
-	margin:0;
+	margin: 0;
 }
-@media screen and (max-width: 800px) {
-	h1 {
-	  font-size: 2em;
-	}
-  }
+
+.social-media {
+	margin: 10% 0 0;
+}
+.social-media a {
+	margin: 0 2% 0 0;
+}
+.social-media a img {
+	vertical-align: middle;
+	margin: 0 5px 0 0;
+}
+a.insta, a.twitter {
+	background-color: #405DE6;
+	padding: 20px;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 8px;
+}
+a.twitter {
+	background-color: #03A9F4;
+}
