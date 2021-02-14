@@ -23,9 +23,8 @@ p {
 }
 
 nav {
-	position: absolute;
-	top: 30px;
-	right: 100px;
+	position: relative;
+	margin-top: 30px;
 	clear: both;
 }
 nav a {
@@ -45,7 +44,7 @@ nav a:hover {
 }
 
 .logo img.pic {
-	margin-top: 70px;
+	margin-top: 20px;
 }
 
 .intro p {
