@@ -44,6 +44,10 @@ nav a:hover {
 	clear: both;
 }
 
+.logo img.pic {
+	margin-top: 70px;
+}
+
 .intro p {
 	width: 80%;
 	margin: 0 auto 1em;
