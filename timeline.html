@@ -20,11 +20,16 @@
           <h2>{{ card.immutable_data.name }}</h2>
           <h5>{{ card.created_at_time | formatDate }}</h5>
           <div class="card">
-            <img :src="'https://imagex.aratech.co/?url=wax.atomichub.io/ipfs/' + card.immutable_data.img + '&w=300'"
+            <!-- <img :src="'https://imagex.aratech.co/?url=wax.atomichub.io/ipfs/' + card.immutable_data.img + '&w=300'"
+              :alt="card.immutable_data.name + ' front'" /> -->
+            <img :src="'https://cloudflare-ipfs.com/ipfs/' + card.immutable_data.img"
               :alt="card.immutable_data.name + ' front'" />
-            <img v-if="card.immutable_data.backimg" :src="'https://imagex.aratech.co/?url=wax.atomichub.io/ipfs/' + card.immutable_data.backimg + '&w=300'"
+            <!-- <img v-if="card.immutable_data.backimg" :src="'https://imagex.aratech.co/?url=wax.atomichub.io/ipfs/' + card.immutable_data.backimg + '&w=300'"
+              :alt="card.immutable_data.name + ' back'" /> -->
+            <img v-if="card.immutable_data.backimg"
+              :src="'https://cloudflare-ipfs.com/ipfs/' + card.immutable_data.backimg"
               :alt="card.immutable_data.name + ' back'" />
-              <img v-if="!card.immutable_data.backimg" src="images/blank.jpg"/>
+            <img v-if="!card.immutable_data.backimg" src="images/blank.jpg" />
           </div>
           <p>{{ card.immutable_data.description }}</p>
           <h5>
