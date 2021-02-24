@@ -60,12 +60,12 @@
 
         methods: {
           fetchData: function () {
-            var apiURL = "https://wax.api.atomicassets.io/atomicassets/v1/templates?collection_name=alpacaworlds&page=1&limit=100&order=asc&sort=created";
-            var xhr = new XMLHttpRequest();
-            var self = this;
+            const apiURL = "https://wax.api.atomicassets.io/atomicassets/v1/templates?collection_name=alpacaworlds&page=1&limit=100&order=asc&sort=created";
+            const xhr = new XMLHttpRequest();
+            const self = this;
             xhr.open("GET", apiURL);
             xhr.onload = function () {
-              self.cards = JSON.parse(xhr.responseText).data;
+              self.cards = (JSON.parse(xhr.responseText).data || []).filter(template => template.template_id !== '59093');
             };
             xhr.send();
           },
