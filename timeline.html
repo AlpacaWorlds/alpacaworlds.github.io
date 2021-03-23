@@ -61,7 +61,7 @@
         methods: {
           fetchData: function () {
             // s3.wax.api.atomicassets.io
-            const apiURL = "https://s3.wax.api.atomicassets.io/atomicassets/v1/templates?collection_name=alpacaworlds&page=1&limit=100&order=asc&sort=created";
+            const apiURL = "https://wax.api.atomicassets.io/atomicassets/v1/templates?collection_name=alpacaworlds&page=1&limit=100&order=asc&sort=created";
             const xhr = new XMLHttpRequest();
             const self = this;
             xhr.open("GET", apiURL);
